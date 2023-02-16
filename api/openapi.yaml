@@ -1,0 +1,2321 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- description: Generated server url
+  url: http://localhost:8085
+paths:
+  /course:
+    get:
+      description: get-course
+      operationId: getCollectionResource-course-get_1
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelEntityModelCourse'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelEntityModelCourse'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+      tags:
+      - course-entity-controller
+      x-accepts: "application/hal+json,application/x-spring-data-compact+json,text/uri-list"
+    post:
+      description: create-course
+      operationId: postCollectionResource-course-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseRequestBody'
+        required: true
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: Created
+      tags:
+      - course-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /course/{id}:
+    delete:
+      description: delete-course
+      operationId: deleteItemResource-course-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-entity-controller
+      x-accepts: application/json
+    get:
+      description: get-course
+      operationId: getItemResource-course-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-entity-controller
+      x-accepts: application/hal+json
+    patch:
+      description: patch-course
+      operationId: patchItemResource-course-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - course-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-course
+      operationId: putItemResource-course-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - course-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /course/{id}/coursename:
+    delete:
+      description: delete-coursename-by-course-Id
+      operationId: deletePropertyReference-course-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-coursename-by-course-Id
+      operationId: followPropertyReference-course-get_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: "application/hal+json,text/uri-list"
+    patch:
+      description: patch-coursename-by-course-Id
+      operationId: createPropertyReference-course-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - course-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-coursename-by-course-Id
+      operationId: createPropertyReference-course-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - course-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /course/{id}/coursename/{propertyId}:
+    delete:
+      description: delete-coursename-by-course-Id
+      operationId: deletePropertyReferenceId-course-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-coursename-by-course-Id
+      operationId: followPropertyReference-course-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/hal+json
+  /course/{id}/degreetype:
+    delete:
+      description: delete-degreetype-by-course-Id
+      operationId: deletePropertyReference-course-delete_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-degreetype-by-course-Id
+      operationId: followPropertyReference-course-get_2_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: "application/hal+json,text/uri-list"
+    patch:
+      description: patch-degreetype-by-course-Id
+      operationId: createPropertyReference-course-patch_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - course-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-degreetype-by-course-Id
+      operationId: createPropertyReference-course-put_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - course-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /course/{id}/degreetype/{propertyId}:
+    delete:
+      description: delete-degreetype-by-course-Id
+      operationId: deletePropertyReferenceId-course-delete_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-degreetype-by-course-Id
+      operationId: followPropertyReference-course-get_2
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/hal+json
+  /course/{id}/students:
+    delete:
+      description: delete-student-by-course-Id
+      operationId: deletePropertyReference-course-delete_2
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-student-by-course-Id
+      operationId: followPropertyReference-course-get_3_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelStudent'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: "application/hal+json,text/uri-list"
+    patch:
+      description: patch-student-by-course-Id
+      operationId: createPropertyReference-course-patch_2
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelStudent'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - course-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-student-by-course-Id
+      operationId: createPropertyReference-course-put_2
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelStudent'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelStudent'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - course-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /course/{id}/students/{propertyId}:
+    delete:
+      description: delete-student-by-course-Id
+      operationId: deletePropertyReferenceId-course-delete_2
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-student-by-course-Id
+      operationId: followPropertyReference-course-get_3
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelStudent'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - course-property-reference-controller
+      x-accepts: application/hal+json
+  /coursename:
+    get:
+      description: get-coursename
+      operationId: getCollectionResource-coursename-get_1
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelEntityModelCoursename'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelEntityModelCoursename'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+      tags:
+      - coursename-entity-controller
+      x-accepts: "application/hal+json,application/x-spring-data-compact+json,text/uri-list"
+    post:
+      description: create-coursename
+      operationId: postCollectionResource-coursename-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoursenameRequestBody'
+        required: true
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: Created
+      tags:
+      - coursename-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /coursename/{id}:
+    delete:
+      description: delete-coursename
+      operationId: deleteItemResource-coursename-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - coursename-entity-controller
+      x-accepts: application/json
+    get:
+      description: get-coursename
+      operationId: getItemResource-coursename-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - coursename-entity-controller
+      x-accepts: application/hal+json
+    patch:
+      description: patch-coursename
+      operationId: patchItemResource-coursename-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoursenameRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - coursename-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-coursename
+      operationId: putItemResource-coursename-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoursenameRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCoursename'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - coursename-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /coursename/{id}/coursenames:
+    delete:
+      description: delete-course-by-coursename-Id
+      operationId: deletePropertyReference-coursename-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - coursename-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-course-by-coursename-Id
+      operationId: followPropertyReference-coursename-get_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - coursename-property-reference-controller
+      x-accepts: "application/hal+json,text/uri-list"
+    patch:
+      description: patch-course-by-coursename-Id
+      operationId: createPropertyReference-coursename-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - coursename-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-course-by-coursename-Id
+      operationId: createPropertyReference-coursename-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - coursename-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /coursename/{id}/coursenames/{propertyId}:
+    delete:
+      description: delete-course-by-coursename-Id
+      operationId: deletePropertyReferenceId-coursename-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - coursename-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-course-by-coursename-Id
+      operationId: followPropertyReference-coursename-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - coursename-property-reference-controller
+      x-accepts: application/hal+json
+  /degreetype:
+    get:
+      description: get-degreetype
+      operationId: getCollectionResource-degreetype-get_1
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelEntityModelDegreetype'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelEntityModelDegreetype'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+      tags:
+      - degreetype-entity-controller
+      x-accepts: "application/hal+json,application/x-spring-data-compact+json,text/uri-list"
+    post:
+      description: create-degreetype
+      operationId: postCollectionResource-degreetype-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DegreetypeRequestBody'
+        required: true
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: Created
+      tags:
+      - degreetype-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /degreetype/{id}:
+    delete:
+      description: delete-degreetype
+      operationId: deleteItemResource-degreetype-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - degreetype-entity-controller
+      x-accepts: application/json
+    get:
+      description: get-degreetype
+      operationId: getItemResource-degreetype-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - degreetype-entity-controller
+      x-accepts: application/hal+json
+    patch:
+      description: patch-degreetype
+      operationId: patchItemResource-degreetype-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DegreetypeRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - degreetype-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-degreetype
+      operationId: putItemResource-degreetype-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DegreetypeRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelDegreetype'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - degreetype-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /degreetype/{id}/degreetype:
+    delete:
+      description: delete-course-by-degreetype-Id
+      operationId: deletePropertyReference-degreetype-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - degreetype-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-course-by-degreetype-Id
+      operationId: followPropertyReference-degreetype-get_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - degreetype-property-reference-controller
+      x-accepts: "application/hal+json,text/uri-list"
+    patch:
+      description: patch-course-by-degreetype-Id
+      operationId: createPropertyReference-degreetype-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - degreetype-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-course-by-degreetype-Id
+      operationId: createPropertyReference-degreetype-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - degreetype-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /degreetype/{id}/degreetype/{propertyId}:
+    delete:
+      description: delete-course-by-degreetype-Id
+      operationId: deletePropertyReferenceId-degreetype-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - degreetype-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-course-by-degreetype-Id
+      operationId: followPropertyReference-degreetype-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelCourse'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - degreetype-property-reference-controller
+      x-accepts: application/hal+json
+  /profile:
+    get:
+      operationId: listAllFormsOfMetadata_1
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/RepresentationModelObject'
+          description: OK
+      tags:
+      - profile-controller
+      x-accepts: application/hal+json
+  /profile/course:
+    get:
+      operationId: descriptor_1_1_1
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+            application/alps+json:
+              schema:
+                type: string
+            application/schema+json:
+              schema:
+                $ref: '#/components/schemas/JsonSchema'
+          description: OK
+      tags:
+      - profile-controller
+      x-accepts: "*/*,application/alps+json,application/schema+json"
+  /profile/coursename:
+    get:
+      operationId: descriptor_1_1_2
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+            application/alps+json:
+              schema:
+                type: string
+            application/schema+json:
+              schema:
+                $ref: '#/components/schemas/JsonSchema'
+          description: OK
+      tags:
+      - profile-controller
+      x-accepts: "*/*,application/alps+json,application/schema+json"
+  /profile/degreetype:
+    get:
+      operationId: descriptor_1_1_3
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+            application/alps+json:
+              schema:
+                type: string
+            application/schema+json:
+              schema:
+                $ref: '#/components/schemas/JsonSchema'
+          description: OK
+      tags:
+      - profile-controller
+      x-accepts: "*/*,application/alps+json,application/schema+json"
+  /profile/student:
+    get:
+      operationId: descriptor_1_1_4
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+            application/alps+json:
+              schema:
+                type: string
+            application/schema+json:
+              schema:
+                $ref: '#/components/schemas/JsonSchema'
+          description: OK
+      tags:
+      - profile-controller
+      x-accepts: "*/*,application/alps+json,application/schema+json"
+  /student:
+    get:
+      description: get-student
+      operationId: getCollectionResource-student-get_1
+      parameters:
+      - description: Zero-based page index (0..N)
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+        style: form
+      - description: The size of the page to be returned
+        explode: true
+        in: query
+        name: size
+        required: false
+        schema:
+          default: 20
+          minimum: 1
+          type: integer
+        style: form
+      - description: "Sorting criteria in the format: property,(asc|desc). Default\
+          \ sort order is ascending. Multiple sort criteria are supported."
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelStudent'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelStudent'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+      tags:
+      - student-entity-controller
+      x-accepts: "application/hal+json,application/x-spring-data-compact+json,text/uri-list"
+    post:
+      description: create-student
+      operationId: postCollectionResource-student-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentRequestBody'
+        required: true
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelStudent'
+          description: Created
+      tags:
+      - student-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /student/{id}:
+    delete:
+      description: delete-student
+      operationId: deleteItemResource-student-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - student-entity-controller
+      x-accepts: application/json
+    get:
+      description: get-student
+      operationId: getItemResource-student-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelStudent'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - student-entity-controller
+      x-accepts: application/hal+json
+    patch:
+      description: patch-student
+      operationId: patchItemResource-student-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelStudent'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - student-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-student
+      operationId: putItemResource-student-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelStudent'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelStudent'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - student-entity-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /student/{id}/course:
+    delete:
+      description: delete-course-by-student-Id
+      operationId: deletePropertyReference-student-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - student-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-course-by-student-Id
+      operationId: followPropertyReference-student-get_1
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+            text/uri-list:
+              schema:
+                type: string
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - student-property-reference-controller
+      x-accepts: "application/hal+json,text/uri-list"
+    patch:
+      description: patch-course-by-student-Id
+      operationId: createPropertyReference-student-patch
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: OK
+        "204":
+          description: No Content
+      tags:
+      - student-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+    put:
+      description: update-course-by-student-Id
+      operationId: createPropertyReference-student-put
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          application/x-spring-data-compact+json:
+            schema:
+              $ref: '#/components/schemas/CollectionModelObject'
+          text/uri-list:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: OK
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: Created
+        "204":
+          description: No Content
+      tags:
+      - student-property-reference-controller
+      x-content-type: application/json
+      x-accepts: application/hal+json
+  /student/{id}/course/{propertyId}:
+    delete:
+      description: delete-course-by-student-Id
+      operationId: deletePropertyReferenceId-student-delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+      tags:
+      - student-property-reference-controller
+      x-accepts: application/json
+    get:
+      description: get-course-by-student-Id
+      operationId: followPropertyReference-student-get
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: propertyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelCourse'
+          description: OK
+        "404":
+          description: Not Found
+      tags:
+      - student-property-reference-controller
+      x-accepts: application/hal+json
+components:
+  schemas:
+    AbstractJsonSchemaPropertyObject:
+      properties:
+        title:
+          type: string
+        readOnly:
+          type: boolean
+      type: object
+    Item:
+      properties:
+        type:
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/AbstractJsonSchemaPropertyObject'
+          type: object
+        requiredProperties:
+          items:
+            type: string
+          type: array
+      type: object
+    JsonSchema:
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/AbstractJsonSchemaPropertyObject'
+          type: object
+        requiredProperties:
+          items:
+            type: string
+          type: array
+        definitions:
+          additionalProperties:
+            $ref: '#/components/schemas/Item'
+          type: object
+        type:
+          type: string
+        $schema:
+          type: string
+      type: object
+    Links:
+      additionalProperties:
+        $ref: '#/components/schemas/Link'
+      type: object
+    RepresentationModelObject:
+      properties:
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    Course:
+      example:
+        getdegreetype: null
+        getcourseid: 1
+        students:
+        - null
+        - null
+        getcoursename:
+          coursenames:
+          - null
+          - null
+          getcoursename: getcoursename
+          getcoursenameid: 5
+      properties:
+        getcourseid:
+          format: int32
+          type: integer
+        getdegreetype:
+          $ref: '#/components/schemas/Degreetype'
+        getcoursename:
+          $ref: '#/components/schemas/Coursename'
+        students:
+          items:
+            $ref: '#/components/schemas/Course'
+          type: array
+      type: object
+    Coursename:
+      example:
+        coursenames:
+        - null
+        - null
+        getcoursename: getcoursename
+        getcoursenameid: 5
+      properties:
+        getcoursenameid:
+          format: int32
+          type: integer
+        getcoursename:
+          type: string
+        coursenames:
+          items:
+            $ref: '#/components/schemas/Course'
+          type: array
+      type: object
+    Degreetype:
+      example:
+        degreetype:
+        - getdegreetype: null
+          getcourseid: 1
+          students:
+          - null
+          - null
+          getcoursename:
+            coursenames:
+            - null
+            - null
+            getcoursename: getcoursename
+            getcoursenameid: 5
+        - getdegreetype: null
+          getcourseid: 1
+          students:
+          - null
+          - null
+          getcoursename:
+            coursenames:
+            - null
+            - null
+            getcoursename: getcoursename
+            getcoursenameid: 5
+        shortcode: shortcode
+        typename: typename
+        getdegreetypeid: 6
+      properties:
+        getdegreetypeid:
+          format: int32
+          type: integer
+        typename:
+          type: string
+        shortcode:
+          type: string
+        degreetype:
+          items:
+            $ref: '#/components/schemas/Course'
+          type: array
+      type: object
+    EntityModelStudent:
+      properties:
+        name:
+          type: string
+        address:
+          type: string
+        dob:
+          format: date
+          type: string
+        id:
+          format: int32
+          type: integer
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    PageMetadata:
+      properties:
+        size:
+          format: int64
+          type: integer
+        totalElements:
+          format: int64
+          type: integer
+        totalPages:
+          format: int64
+          type: integer
+        number:
+          format: int64
+          type: integer
+      type: object
+    PagedModelEntityModelStudent:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/PagedModelEntityModelStudent__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+      type: object
+    EntityModelCourse:
+      properties:
+        getcourseid:
+          format: int32
+          type: integer
+        getdegreetype:
+          $ref: '#/components/schemas/Degreetype'
+        getcoursename:
+          $ref: '#/components/schemas/Coursename'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CollectionModelObject:
+      example:
+        _embedded:
+          objects:
+          - "{}"
+          - "{}"
+        _links:
+          key:
+            hreflang: hreflang
+            templated: true
+            profile: profile
+            name: name
+            href: href
+            title: title
+            type: type
+            deprecation: deprecation
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/CollectionModelObject__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CollectionModelEntityModelCourse:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/CollectionModelEntityModelCourse__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CollectionModelStudent:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/CollectionModelStudent__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    EntityModelDegreetype:
+      properties:
+        getdegreetypeid:
+          format: int32
+          type: integer
+        typename:
+          type: string
+        shortcode:
+          type: string
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    EntityModelCoursename:
+      properties:
+        getcoursenameid:
+          format: int32
+          type: integer
+        getcoursename:
+          type: string
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CollectionModelEntityModelDegreetype:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/CollectionModelEntityModelDegreetype__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CollectionModelCourse:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/CollectionModelCourse__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CollectionModelEntityModelCoursename:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/CollectionModelEntityModelCoursename__embedded'
+        _links:
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+          type: object
+      type: object
+    CourseRequestBody:
+      example:
+        getdegreetype:
+          degreetype:
+          - getdegreetype: null
+            getcourseid: 1
+            students:
+            - null
+            - null
+            getcoursename:
+              coursenames:
+              - null
+              - null
+              getcoursename: getcoursename
+              getcoursenameid: 5
+          - getdegreetype: null
+            getcourseid: 1
+            students:
+            - null
+            - null
+            getcoursename:
+              coursenames:
+              - null
+              - null
+              getcoursename: getcoursename
+              getcoursenameid: 5
+          shortcode: shortcode
+          typename: typename
+          getdegreetypeid: 6
+        getcourseid: 0
+        students:
+        - students
+        - students
+        getcoursename:
+          coursenames:
+          - null
+          - null
+          getcoursename: getcoursename
+          getcoursenameid: 5
+      properties:
+        getcourseid:
+          format: int32
+          type: integer
+        getdegreetype:
+          $ref: '#/components/schemas/Degreetype'
+        getcoursename:
+          $ref: '#/components/schemas/Coursename'
+        students:
+          items:
+            type: string
+          type: array
+      type: object
+    CoursenameRequestBody:
+      example:
+        coursenames:
+        - coursenames
+        - coursenames
+        getcoursename: getcoursename
+        getcoursenameid: 0
+      properties:
+        getcoursenameid:
+          format: int32
+          type: integer
+        getcoursename:
+          type: string
+        coursenames:
+          items:
+            type: string
+          type: array
+      type: object
+    DegreetypeRequestBody:
+      example:
+        degreetype:
+        - degreetype
+        - degreetype
+        shortcode: shortcode
+        typename: typename
+        getdegreetypeid: 0
+      properties:
+        getdegreetypeid:
+          format: int32
+          type: integer
+        typename:
+          type: string
+        shortcode:
+          type: string
+        degreetype:
+          items:
+            type: string
+          type: array
+      type: object
+    CourseResponse:
+      properties:
+        getcourseid:
+          format: int32
+          type: integer
+        getdegreetype:
+          $ref: '#/components/schemas/Degreetype'
+        getcoursename:
+          $ref: '#/components/schemas/Coursename'
+      type: object
+    StudentResponse:
+      properties:
+        name:
+          type: string
+        address:
+          type: string
+        dob:
+          format: date
+          type: string
+        id:
+          format: int32
+          type: integer
+      type: object
+    StudentRequestBody:
+      example:
+        address: address
+        dob: 2000-01-23
+        name: name
+        course: course
+        id: 0
+      properties:
+        name:
+          type: string
+        address:
+          type: string
+        dob:
+          format: date
+          type: string
+        course:
+          type: string
+        id:
+          format: int32
+          type: integer
+      type: object
+    Link:
+      example:
+        hreflang: hreflang
+        templated: true
+        profile: profile
+        name: name
+        href: href
+        title: title
+        type: type
+        deprecation: deprecation
+      properties:
+        href:
+          type: string
+        hreflang:
+          type: string
+        title:
+          type: string
+        type:
+          type: string
+        deprecation:
+          type: string
+        profile:
+          type: string
+        name:
+          type: string
+        templated:
+          type: boolean
+      type: object
+    PagedModelEntityModelStudent__embedded:
+      properties:
+        student:
+          items:
+            $ref: '#/components/schemas/EntityModelStudent'
+          type: array
+      type: object
+    CollectionModelObject__embedded:
+      example:
+        objects:
+        - "{}"
+        - "{}"
+      properties:
+        objects:
+          items:
+            type: object
+          type: array
+      type: object
+    CollectionModelEntityModelCourse__embedded:
+      properties:
+        course:
+          items:
+            $ref: '#/components/schemas/EntityModelCourse'
+          type: array
+      type: object
+    CollectionModelStudent__embedded:
+      properties:
+        student:
+          items:
+            $ref: '#/components/schemas/StudentResponse'
+          type: array
+      type: object
+    CollectionModelEntityModelDegreetype__embedded:
+      properties:
+        degreetype:
+          items:
+            $ref: '#/components/schemas/EntityModelDegreetype'
+          type: array
+      type: object
+    CollectionModelCourse__embedded:
+      properties:
+        course:
+          items:
+            $ref: '#/components/schemas/CourseResponse'
+          type: array
+      type: object
+    CollectionModelEntityModelCoursename__embedded:
+      properties:
+        coursename:
+          items:
+            $ref: '#/components/schemas/EntityModelCoursename'
+          type: array
+      type: object
+
